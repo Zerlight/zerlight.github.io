@@ -227,27 +227,31 @@
       <br><br>
       
       
-  <div id="gitalk-container"></div>
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.11.1/js/md5.min.js"></script>
-  <script type="text/javascript">
-    var gitalk = new Gitalk({
-      clientID: '9cfa038e9a8df7893dd2',
-      clientSecret: '76c0709c4c23a49e4c55347ad871d146dc7549f8',
-      repo: 'zerlight.github.io',
-      owner: 'Zerlight',
-      admin: 'Zerlight',
-      id: md5(blog.zerlight),
-      language: 'zh-CN',
-      perPage: 100,
-      pagerDirection: 'last',
-      createIssueManually: 'true',
-      distractionFreeMode: 'false'
-    });
+  <div id="vcomments" style="width: 90%; margin: 0 auto;"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
-    gitalk.render('gitalk-container')
+  <script>
+    var notify = 'false' === true;
+    var verify = 'true' === true;
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+        app_id: "umsJUutCcpfEq7QJMQdx9YNk-9Nh9j0Va",
+        app_key: "7UjJyhuJ7yEWvbVoLK5yRcnn",
+        placeholder: "喵~发表下自己的见解？",
+        avatar: "mp",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+      });
+      oldLoad && oldLoad();
+    };
   </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
 
 
     
